@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+import network.SqlLiteConnection;
+
 /**
  *
  * @author Sahtia
@@ -28,130 +31,136 @@ public class DashboardScreen extends javax.swing.JFrame {
 
         pnlMain = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        pnlDashboard = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        pnlMenu = new javax.swing.JPanel();
         btnDashboard = new javax.swing.JButton();
         btnListData = new javax.swing.JButton();
         btnSetting = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         pnlMain.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         pnlMain.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlMain.setLayout(new java.awt.CardLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html><p style='text-align: center;'>Selamat Datang di<br>Password Manager Apps</p></html>");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pnlMain.add(jLabel1, "card2");
 
-        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
-        pnlMain.setLayout(pnlMainLayout);
-        pnlMainLayout.setHorizontalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-        );
-        pnlMainLayout.setVerticalGroup(
-            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-        );
+        pnlMenu.setBackground(new java.awt.Color(1, 19, 48));
+        pnlMenu.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 5));
 
-        pnlDashboard.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        pnlDashboard.setPreferredSize(new java.awt.Dimension(372, 322));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Dashboard");
-
-        javax.swing.GroupLayout pnlDashboardLayout = new javax.swing.GroupLayout(pnlDashboard);
-        pnlDashboard.setLayout(pnlDashboardLayout);
-        pnlDashboardLayout.setHorizontalGroup(
-            pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-        );
-        pnlDashboardLayout.setVerticalGroup(
-            pnlDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDashboardLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 296, Short.MAX_VALUE))
-        );
-
-        btnDashboard.setText("Dashboard");
+        btnDashboard.setIcon(new ImageIcon("my-asset/default.png"));
+        btnDashboard.setText("<html><font color='white'>Dashboard</font><html>");
+        btnDashboard.setBorder(null);
+        btnDashboard.setFocusPainted(false);
+        btnDashboard.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDashboard.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnDashboard.setPressedIcon(new ImageIcon("my-asset/pressed.png"));
+        btnDashboard.setRolloverIcon(new ImageIcon("my-asset/hover.png"));
+        btnDashboard.setSelectedIcon(new ImageIcon("my-asset/selected.png"));
         btnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDashboardActionPerformed(evt);
             }
         });
+        pnlMenu.add(btnDashboard);
 
-        btnListData.setText("List Data");
+        btnListData.setIcon(new ImageIcon("my-asset/default.png"));
+        btnListData.setText("<html><font color='white'>List Data</font><html>");
+        btnListData.setBorder(null);
+        btnListData.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnListData.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnListData.setPressedIcon(new ImageIcon("my-asset/pressed.png"));
+        btnListData.setRolloverIcon(new ImageIcon("my-asset/hover.png"));
+        btnListData.setSelectedIcon(new ImageIcon("my-asset/selected.png"));
         btnListData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnListDataActionPerformed(evt);
             }
         });
+        pnlMenu.add(btnListData);
 
-        btnSetting.setText("Setting");
+        btnSetting.setIcon(new ImageIcon("my-asset/default.png"));
+        btnSetting.setText("<html><font color='white'>Setting</font><html>");
+        btnSetting.setBorder(null);
+        btnSetting.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSetting.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnSetting.setPressedIcon(new ImageIcon("my-asset/pressed.png"));
+        btnSetting.setRolloverIcon(new ImageIcon("my-asset/hover.png"));
+        btnSetting.setSelectedIcon(new ImageIcon("my-asset/selected.png"));
+        pnlMenu.add(btnSetting);
 
-        btnLogout.setText("Logout");
+        btnLogout.setIcon(new ImageIcon("my-asset/default.png"));
+        btnLogout.setText("<html><font color='white'>Logout</font><html>");
+        btnLogout.setBorder(null);
+        btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLogout.setPreferredSize(new java.awt.Dimension(200, 40));
+        btnLogout.setPressedIcon(new ImageIcon("my-asset/pressed.png"));
+        btnLogout.setRolloverIcon(new ImageIcon("my-asset/hover.png"));
+        btnLogout.setSelectedIcon(new ImageIcon("my-asset/selected.png"));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
+        pnlMenu.add(btnLogout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnListData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSetting, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(109, Short.MAX_VALUE)
-                    .addComponent(pnlDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDashboard)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnListData)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSetting)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnLogout)
-                        .addGap(0, 183, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(pnlDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(pnlMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                    .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
-        pnlMain.setVisible(false);
-        pnlDashboard.setVisible(true);
+//        SqlLiteConnection.connect();
+        
+        pnlMain.removeAll();
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        pnlMain.add(new DashboardPanel());
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        btnDashboard.setSelected(true);
+        btnListData.setSelected(false);
+        btnSetting.setSelected(false);
+        btnLogout.setSelected(false);
     }//GEN-LAST:event_btnDashboardActionPerformed
 
     private void btnListDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListDataActionPerformed
-        // TODO add your handling code here:
+        pnlMain.removeAll();
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        pnlMain.add(new ListDataPanel());
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        btnDashboard.setSelected(false);
+        btnListData.setSelected(true);
+        btnSetting.setSelected(false);
+        btnLogout.setSelected(false);
     }//GEN-LAST:event_btnListDataActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -203,8 +212,7 @@ public class DashboardScreen extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnSetting;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel pnlDashboard;
     private javax.swing.JPanel pnlMain;
+    private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 }
