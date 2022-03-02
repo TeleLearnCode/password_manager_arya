@@ -167,6 +167,9 @@
               <Connection code="new ImageIcon(&quot;my-asset/selected.png&quot;)" type="code"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSettingActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLogout">
           <Properties>

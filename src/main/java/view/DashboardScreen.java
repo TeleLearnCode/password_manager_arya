@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.Component;
 import javax.swing.ImageIcon;
 import network.SqlLiteConnection;
 
@@ -92,6 +93,11 @@ public class DashboardScreen extends javax.swing.JFrame {
         btnSetting.setPressedIcon(new ImageIcon("my-asset/pressed.png"));
         btnSetting.setRolloverIcon(new ImageIcon("my-asset/hover.png"));
         btnSetting.setSelectedIcon(new ImageIcon("my-asset/selected.png"));
+        btnSetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSettingActionPerformed(evt);
+            }
+        });
         pnlMenu.add(btnSetting);
 
         btnLogout.setIcon(new ImageIcon("my-asset/default.png"));
@@ -133,34 +139,11 @@ public class DashboardScreen extends javax.swing.JFrame {
 
     private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
 //        SqlLiteConnection.connect();
-        
-        pnlMain.removeAll();
-        pnlMain.repaint();
-        pnlMain.revalidate();
-        
-        pnlMain.add(new DashboardPanel());
-        pnlMain.repaint();
-        pnlMain.revalidate();
-        
-        btnDashboard.setSelected(true);
-        btnListData.setSelected(false);
-        btnSetting.setSelected(false);
-        btnLogout.setSelected(false);
+        this._setSelectedNavigation(new DashboardPanel(), true, false, false);
     }//GEN-LAST:event_btnDashboardActionPerformed
 
     private void btnListDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListDataActionPerformed
-        pnlMain.removeAll();
-        pnlMain.repaint();
-        pnlMain.revalidate();
-        
-        pnlMain.add(new ListDataPanel());
-        pnlMain.repaint();
-        pnlMain.revalidate();
-        
-        btnDashboard.setSelected(false);
-        btnListData.setSelected(true);
-        btnSetting.setSelected(false);
-        btnLogout.setSelected(false);
+        this._setSelectedNavigation(new ListDataPanel(), false, true, false);
     }//GEN-LAST:event_btnListDataActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
@@ -170,6 +153,10 @@ public class DashboardScreen extends javax.swing.JFrame {
         
         this.setVisible(false);
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingActionPerformed
+        this._setSelectedNavigation(new SettingPanel(), false, false, true);
+    }//GEN-LAST:event_btnSettingActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +192,21 @@ public class DashboardScreen extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void _setSelectedNavigation(Object panel, Boolean isDashboard, Boolean isListData, Boolean isSetting){
+        pnlMain.removeAll();
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        pnlMain.add((Component) panel);
+        pnlMain.repaint();
+        pnlMain.revalidate();
+        
+        btnDashboard.setSelected(isDashboard);
+        btnListData.setSelected(isListData);
+        btnSetting.setSelected(isSetting);
+        btnLogout.setSelected(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDashboard;
@@ -215,4 +217,5 @@ public class DashboardScreen extends javax.swing.JFrame {
     private javax.swing.JPanel pnlMain;
     private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
+
 }
