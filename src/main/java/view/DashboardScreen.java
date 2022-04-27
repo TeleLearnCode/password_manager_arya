@@ -39,7 +39,6 @@ public class DashboardScreen extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 600));
 
         pnlMain.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         pnlMain.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

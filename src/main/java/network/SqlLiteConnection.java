@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package network;
 
 import java.sql.Connection;
@@ -19,7 +15,7 @@ public class SqlLiteConnection {
     
     public static String connect(){
         try {
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:password_manager_sahtia.db");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:password_manager_arya.db");
             conn.close();
             
             System.out.println("Success connect sql lite database");

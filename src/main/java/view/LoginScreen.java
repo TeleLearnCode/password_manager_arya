@@ -111,7 +111,6 @@ public class LoginScreen extends javax.swing.JFrame {
         DashboardScreen dashboardScreen = new DashboardScreen();
         dashboardScreen.setLocationRelativeTo(null);
         dashboardScreen.setVisible(true);
-        
         this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
 
